@@ -4,7 +4,7 @@
 
 This little module does only one little thing:
 
-Adding a half-width whitespace between full-width characters and half-width characters.
+Adding an additional half-width whitespace between full-width characters and half-width characters.
 
 For example, the following sentence
 
@@ -18,14 +18,14 @@ becomes
 我在 github 上关注了 123 个 repo。
 ```
 
-which is usually considered to be easier to read.
+which is considered to be easier to read.
 
 
 ### Installation and usage
 
 To install, just run `python setup.py install` from terminal.
 
-The usage is pretty straight forward:
+Usage:
 
 ```
 import juli
