@@ -31,7 +31,7 @@ Usage:
 import juli
 
 input = '我在github上关注了123个repo。'
-output = juli.julify(input)
+output = juli.render(input)
 ```
 
 ### Rules
