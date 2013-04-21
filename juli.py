@@ -33,6 +33,8 @@ SHOULD_IGNORE = (
     (HALF_ALPHA_NUMERIC, HALF_OTHER),
     (HALF_ALPHA_NUMERIC, FULL_PUNCTUATION),
     (HALF_OTHER, FULL_PUNCTUATION),
+    (FULL_PUNCTUATION, FULL_OTHER),
+    (FULL_OTHER, FULL_OTHER),
 )
 
 
@@ -42,7 +44,9 @@ def render(src):
     """ Add space between half-width and full-width characters.
     """
     def func(m):
-        l, r = src[m.start()-1], src[m.end()]
+        start, end = m.start(), m.end()
+        l, r = src[start-1] if start > 0 else ' ', src[end]
+        print '[%s] [%s]' % (l, r)
         _types = tuple(sorted(map(get_type, (l, r))))
         if HALF_SEPRATOR in _types or _types in SHOULD_IGNORE:
             return ''
